@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "QbbtZPDtbCElT4AUmBuAMFkYEQCz2cbgLcmQKsPrD0U=",
+  "Source": "TornadoAPI",
+  "BasePath": "_content/TornadoAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
