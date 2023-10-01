@@ -8,7 +8,7 @@ public interface IMenuInterface {
 
     Task PostMenu(Menu menu);
 
-    Task UpdateMenu(Menu menu);
+    Task<Menu> UpdateMenu(Menu menu);
 
     Task DeleteMenu(string id);
 }

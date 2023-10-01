@@ -36,10 +36,12 @@ public class MenuCollection : IMenuInterface
         await Collection.InsertOneAsync(menu);
     }
 
-    public async Task UpdateMenu(Menu menu)
+    public async Task<Menu> UpdateMenu(Menu menu)
     {
         var filter = Builders<Menu>.Filter.Eq(s => s.Id, menu.Id);
 
-        await Collection.ReplaceOneAsync(filter, menu);
+        var newMenu = await Collection.ReplaceOneAsync(filter, menu);
+
+        return menu;
     }
 }

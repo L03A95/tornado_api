@@ -15,7 +15,7 @@ public class ProductController : Controller {
     public async Task<IActionResult> GetMenuById(string id) {
         var menu = await db.GetMenuById(id);
         if (menu == null) {
-            return BadRequest();
+            return NotFound();
         };
 
         return Ok(menu);
@@ -33,11 +33,15 @@ public class ProductController : Controller {
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateMenu([FromBody] Menu menu, string id) {
         if (menu == null) {
-            return BadRequest();
+            return NotFound();
             };
         
         menu.Id = id;
-        await db.UpdateMenu(menu);
+        var updatedMenu = await db.UpdateMenu(menu);
+
+        if (updatedMenu == null) {
+            return NotFound();
+        }
 
         return Created("Updated", true);
     }
