@@ -25,9 +25,10 @@ public class MenuCollection : IMenuInterface
 
     public async Task<Menu> GetMenuById(string id)
     {
-        return await Collection.FindAsync(
-        new BsonDocument { {"_id", new ObjectId(id) }}
-        ).Result.FirstAsync();
+    var filter = Builders<Menu>.Filter.Eq("_id", new ObjectId(id));
+    var menu = await Collection.Find(filter).FirstOrDefaultAsync();
+
+    return menu;
     }
 
     public async Task PostMenu(Menu menu)

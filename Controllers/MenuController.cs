@@ -1,9 +1,7 @@
-
-
-using Microsoft.AspNetCore.Http.HttpResults;
+using System.Runtime.InteropServices.JavaScript;
 using Microsoft.AspNetCore.Mvc;
 
-[Route("api/[controller]")]
+[Route("/menu")]
 [ApiController]
 public class ProductController : Controller {
     private IMenuInterface db = new MenuCollection();
@@ -15,7 +13,12 @@ public class ProductController : Controller {
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetMenuById(string id) {
-        return Ok(await db.GetMenuById(id));
+        var menu = await db.GetMenuById(id);
+        if (menu == null) {
+            return BadRequest();
+        };
+
+        return Ok(menu);
     }
 
     [HttpPost]
@@ -29,7 +32,9 @@ public class ProductController : Controller {
 
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateMenu([FromBody] Menu menu, string id) {
-        if (menu == null) return BadRequest();
+        if (menu == null) {
+            return BadRequest();
+            };
         
         menu.Id = id;
         await db.UpdateMenu(menu);
@@ -42,7 +47,7 @@ public class ProductController : Controller {
 
         await db.DeleteMenu(id);
 
-        return Ok()
+        return NoContent();
     }
 
 }
