@@ -1,54 +1,40 @@
 using Microsoft.EntityFrameworkCore;
+using MongoDB.Bson;
+using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<MenuDb>(opt => opt.UseInMemoryDatabase("TornadoApi"));
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+var client = new MongoClient("mongodb://localhost:27017");
+var database = client.GetDatabase("tornadodb");
+
+var menuDB = database.GetCollection<Menu>("menu");
+
 var app = builder.Build();
 
-app.MapGet("/menu", async (MenuDb db) => 
-    await db.Menus.ToListAsync()
-);
-
-app.MapPost("/menu", async (Menu menu, MenuDb db) => {
-    db.Menus.Add(menu);
-    await db.SaveChangesAsync();
-
-    return Results.Created($"/menu/{menu.Id}", menu);
+app.MapGet("/menu", async () => {
+    return await menuDB.FindAsync(new BsonDocument()).Result.ToListAsync();
 });
 
-app.MapDelete("/menu/{id}", async (int id, MenuDb db) => {
-    var menu = await db.Menus.FindAsync(id);
-    if (menu ==  null) {
-        return Results.NotFound();
-    }
-
-    db.Menus.Remove(menu);
-    await db.SaveChangesAsync();
-
-    return Results.NoContent();
+app.MapGet("/menu/{id}", async (string id) => {
+    return await menuDB.FindAsync(
+        new BsonDocument { {"_id", new ObjectId(id) }}
+    ).Result.FirstAsync();
 });
 
-app.MapPut("/menu/{id}", async (int id, Menu updatedMenu, MenuDb db) => {
-    var menu = await db.Menus.FindAsync(id);
-    if (menu == null) {
-        return Results.NotFound();
-    }
+app.MapPost("/menu", async (Menu newMenu) => {
+    await menuDB.InsertOneAsync(newMenu);
+});
 
-    if (updatedMenu.Name != null) {
-        menu.Name = updatedMenu.Name;
-    }
-    if (updatedMenu.Description != null) {
-        menu.Description = updatedMenu.Description;
-    }
-    if (updatedMenu.Image != null) {
-        menu.Image = updatedMenu.Image;
-    }
-    if (updatedMenu.Price != 0) {
-        menu.Price = updatedMenu.Price;
-    }
+app.MapDelete("/menu/{id}", async (string id) => {
+    var filter = Builders<Menu>.Filter.Eq(s => s.Id, id);
 
-    await db.SaveChangesAsync();
-    return Results.Accepted();
+    await menuDB.DeleteOneAsync(filter);
+});
+
+app.MapPut("/menu", async (Menu updatedMenu) => {
+    var filter = Builders<Menu>.Filter.Eq(s => s.Id, updatedMenu.Id);
+
+    await menuDB.ReplaceOneAsync(filter, updatedMenu);
 });
 
 app.Run();

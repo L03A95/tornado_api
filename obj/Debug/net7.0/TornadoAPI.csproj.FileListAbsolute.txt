@@ -30,3 +30,16 @@ D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\Microsoft.EntityFr
 D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\Documentos\Liam Desarrollo Web\TornadoAPI\obj\Debug\net7.0\TornadoAPI.csproj.AssemblyReference.cache
 D:\Documentos\Liam Desarrollo Web\TornadoAPI\obj\Debug\net7.0\TornadoAPI.csproj.CopyComplete
+D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\AWSSDK.Core.dll
+D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\AWSSDK.SecurityToken.dll
+D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\DnsClient.dll
+D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\MongoDB.Bson.dll
+D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\MongoDB.Driver.dll
+D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\MongoDB.Driver.Core.dll
+D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\MongoDB.Libmongocrypt.dll
+D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\SharpCompress.dll
+D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\Snappier.dll
+D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\ZstdSharp.dll
+D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\runtimes\linux\native\libmongocrypt.so
+D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\runtimes\osx\native\libmongocrypt.dylib
+D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\runtimes\win\native\mongocrypt.dll
