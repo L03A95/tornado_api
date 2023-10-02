@@ -1,5 +1,5 @@
-using System.Runtime.InteropServices.JavaScript;
 using Microsoft.AspNetCore.Mvc;
+using dotenv.net;
 
 [Route("/menu")]
 [ApiController]
@@ -19,6 +19,21 @@ public class ProductController : Controller {
         };
 
         return Ok(menu);
+    }
+
+    [HttpPost("/verify")]
+    public bool VerifyUser([FromBody] UserCredentials credentials) {
+        string truePass = "tornadito";
+        string trueUser = "TORNADO";
+
+        if (credentials.Username == trueUser && credentials.Password == truePass)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     [HttpPost]

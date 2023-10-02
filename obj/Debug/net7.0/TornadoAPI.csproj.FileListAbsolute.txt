@@ -43,3 +43,4 @@ D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\ZstdSharp.dll
 D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\runtimes\linux\native\libmongocrypt.so
 D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\runtimes\osx\native\libmongocrypt.dylib
 D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\runtimes\win\native\mongocrypt.dll
+D:\Documentos\Liam Desarrollo Web\TornadoAPI\bin\Debug\net7.0\dotenv.net.dll

@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "wjWGtDs1tquQEwNIH+d708E/EoiiHnKtbpPAZnBQVaj749Tj8qRU+JvQYXUDCeqeOvW9ZS8OW3MCJ3VOiej7UA==",
+  "dgSpecHash": "KYjYZViWFC0EhniqyKyk9iJo/SsKWQx4vYTov6AnacaRE9Px2l/NBSo5BUETLQcm4pCXYwEXdQfDlTidAqzHDg==",
   "success": true,
   "projectFilePath": "D:\\Documentos\\Liam Desarrollo Web\\TornadoAPI\\TornadoAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Liam\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Liam\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Liam\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
+    "C:\\Users\\Liam\\.nuget\\packages\\dotenv.net\\3.1.2\\dotenv.net.3.1.2.nupkg.sha512",
     "C:\\Users\\Liam\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\7.0.11\\microsoft.aspnetcore.diagnostics.entityframeworkcore.7.0.11.nupkg.sha512",
     "C:\\Users\\Liam\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.11\\microsoft.entityframeworkcore.7.0.11.nupkg.sha512",
     "C:\\Users\\Liam\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.11\\microsoft.entityframeworkcore.abstractions.7.0.11.nupkg.sha512",
